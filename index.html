@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My IDE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="ide">
+
+        <!-- File Explorer -->
+        <aside class="file-explorer">
+            <div class="panel-header">
+                EXPLORER
+            </div>
+
+            <div class="file-tree">
+                <div class="folder">📁 project</div>
+                <div class="file">📄 index.html</div>
+                <div class="file">📄 style.css</div>
+                <div class="file">📄 script.js</div>
+            </div>
+        </aside>
+
+
+        <!-- Code Editor -->
+        <main class="code-editor">
+
+            <div class="editor-tabs">
+                <div class="tab active">
+                    index.html
+                </div>
+            </div>
+
+            <div class="editor">
+                <div class="line-numbers">
+                    1<br>
+                    2<br>
+                    3<br>
+                    4<br>
+                    5
+                </div>
+
+                <textarea class="code-area">
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>Hello World</h1>
+    </body>
+</html>
+                </textarea>
+            </div>
+
+        </main>
+
+
+        <!-- AI Agent -->
+        <aside class="agent">
+
+            <div class="panel-header">
+                AI AGENT
+            </div>
+
+            <div class="chat">
+                <div class="message agent-message">
+                    Hello! How can I help you code?
+                </div>
+            </div>
+
+            <div class="agent-input">
+                <input
+                    type="text"
+                    placeholder="Ask your agent..."
+                >
+                <button>Send</button>
+            </div>
+
+        </aside>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
