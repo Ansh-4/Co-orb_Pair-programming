@@ -1,0 +1,576 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    background: #0b0d13;
+    color: white;
+    overflow: hidden;
+}
+
+
+/* Background */
+
+.background {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(2px);
+    opacity: 0.15;
+}
+
+.circle1 {
+    width: 400px;
+    height: 400px;
+    background: #7c5cff;
+    top: -150px;
+    left: -100px;
+}
+
+.circle2 {
+    width: 300px;
+    height: 300px;
+    background: #9b7cff;
+    right: -80px;
+    top: 20%;
+}
+
+.circle3 {
+    width: 250px;
+    height: 250px;
+    background: #6d4aff;
+    bottom: -100px;
+    left: 35%;
+}
+
+.circle4 {
+    width: 180px;
+    height: 180px;
+    background: #a98cff;
+    top: 50%;
+    left: 45%;
+}
+
+
+/* Signup */
+
+.signup-link {
+    position: absolute;
+    top: 28px;
+    right: 40px;
+
+    display: flex;
+    gap: 10px;
+
+    color: #858b98;
+    font-size: 13px;
+}
+
+.signup-link a {
+    color: #9b7cff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.signup-link a:hover {
+    color: white;
+}
+
+
+/* Main */
+
+main {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    gap: 100px;
+
+    max-width: 1200px;
+    margin: auto;
+
+    padding: 40px;
+}
+
+
+/* Information */
+
+.info {
+    flex: 1;
+    max-width: 600px;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.logo span {
+    color: #8b6cff;
+}
+
+.info h1 {
+    font-size: 56px;
+    line-height: 1.05;
+    letter-spacing: -2px;
+    margin-bottom: 25px;
+}
+
+.info h1 span {
+    color: #8b6cff;
+}
+
+.info > p {
+    color: #858b98;
+    font-size: 16px;
+    line-height: 1.7;
+    max-width: 540px;
+}
+
+
+/* Features */
+
+.features {
+    margin-top: 35px;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    margin-bottom: 20px;
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #171a23;
+    border: 1px solid #292d38;
+    border-radius: 10px;
+
+    color: #9b7cff;
+}
+
+.feature h3 {
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.feature p {
+    font-size: 12px;
+    color: #707683;
+}
+
+
+/* Login Card */
+
+.login-card {
+    width: 400px;
+
+    padding: 38px;
+
+    background: rgba(20, 23, 32, 0.88);
+
+    border: 1px solid #292d38;
+    border-radius: 18px;
+
+    backdrop-filter: blur(15px);
+
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4);
+}
+
+.login-card h2 {
+    font-size: 27px;
+    margin-bottom: 8px;
+}
+
+.login-subtitle {
+    color: #858b98;
+    font-size: 13px;
+    margin-bottom: 30px;
+}
+
+
+/* Inputs */
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+
+    font-size: 13px;
+    color: #c5c9d3;
+
+    margin-bottom: 8px;
+}
+
+.input-group input {
+    width: 100%;
+
+    padding: 13px 14px;
+
+    background: #0e1118;
+
+    border: 1px solid #303541;
+    border-radius: 9px;
+
+    color: white;
+
+    outline: none;
+
+    transition: 0.2s;
+}
+
+.input-group input:focus {
+    border-color: #7c5cff;
+
+    box-shadow: 0 0 0 3px rgba(124, 92, 255, 0.12);
+}
+
+.input-group input::placeholder {
+    color: #555b68;
+}
+
+
+/* Options */
+
+.options {
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 12px;
+
+    margin-bottom: 22px;
+}
+
+.options label {
+    color: #777e8b;
+}
+
+.options input {
+    accent-color: #7c5cff;
+}
+
+.options a {
+    color: #9276ff;
+    text-decoration: none;
+}
+
+
+/* Login button */
+
+.login-card button {
+    width: 100%;
+
+    padding: 13px;
+
+    border: none;
+    border-radius: 9px;
+
+    background: #7c5cff;
+
+    color: white;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.login-card button:hover {
+    background: #6b4bea;
+    transform: translateY(-1px);
+}
+
+
+/* Divider */
+
+.divider {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 24px 0;
+
+    color: #626875;
+
+    font-size: 12px;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+
+    flex: 1;
+
+    height: 1px;
+
+    background: #2b2f39;
+}
+
+
+/* Google */
+
+.google {
+    background: white !important;
+    color: #171a23 !important;
+}
+
+.google:hover {
+    background: #eeeeee !important;
+}
+
+
+/* Bottom */
+
+.bottom-text {
+    text-align: center;
+
+    margin-top: 25px;
+
+    color: #777e8b;
+
+    font-size: 12px;
+}
+
+.bottom-text a {
+    color: #9276ff;
+
+    text-decoration: none;
+
+    font-weight: 600;
+}
+
+
+/* Mobile */
+
+@media (max-width: 900px) {
+
+    body {
+        overflow: auto;
+    }
+
+    main {
+        flex-direction: column;
+
+        gap: 40px;
+
+        padding-top: 100px;
+    }
+
+    .info {
+        text-align: center;
+    }
+
+    .info h1 {
+        font-size: 42px;
+    }
+
+    .info > p {
+        margin: auto;
+    }
+
+    .features {
+        display: none;
+    }
+
+    .login-card {
+        width: 100%;
+        max-width: 400px;
+    }
+}
+.animated-background {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: -1;
+
+    pointer-events: none;
+
+    opacity: 0.35;
+}
+
+.animated-background svg {
+    width: 100%;
+    height: 100%;
+}
+
+.animated-background path {
+    fill: none;
+
+    stroke: #7c5cff;
+
+    stroke-width: 1.5;
+
+    opacity: 0.35;
+}
+/* =========================
+   CO-ORB
+========================= */
+
+.co-orb {
+    position: fixed;
+
+    width: 700px;
+    height: 700px;
+
+    left: 45%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    z-index: 0;
+
+    pointer-events: none;
+
+    opacity: 0.85;
+}
+
+.orb-svg {
+    width: 100%;
+    height: 100%;
+
+    overflow: visible;
+}
+
+
+/* =========================
+   OUTER RINGS
+========================= */
+
+.ring {
+    fill: none;
+
+    stroke: rgba(124, 92, 255, 0.18);
+
+    stroke-width: 1;
+}
+
+.ring-outer {
+    stroke: rgba(124, 92, 255, 0.25);
+}
+
+.ring-middle {
+    stroke: rgba(124, 92, 255, 0.18);
+}
+
+.ring-inner {
+    stroke: rgba(124, 92, 255, 0.12);
+}
+
+
+/* =========================
+   GLOWING ARCS
+========================= */
+
+.arc {
+    fill: none;
+
+    stroke-width: 8;
+
+    stroke-linecap: round;
+
+    filter: drop-shadow(0 0 8px #7c5cff);
+}
+
+.arc-1 {
+    stroke: #7c5cff;
+
+    stroke-dasharray: 250 1600;
+
+    transform-origin: 350px 350px;
+}
+
+.arc-2 {
+    stroke: #a78bfa;
+
+    stroke-dasharray: 160 1700;
+
+    transform-origin: 350px 350px;
+}
+
+.arc-3 {
+    stroke: #5b3cc4;
+
+    stroke-dasharray: 100 1750;
+
+    transform-origin: 350px 350px;
+}
+
+
+/* =========================
+   TICKS
+========================= */
+
+.ticks line {
+    stroke: rgba(139, 108, 255, 0.5);
+
+    stroke-width: 2;
+}
+
+
+/* =========================
+   ORB
+========================= */
+
+.orb-lines {
+    fill: none;
+
+    stroke: #8b6cff;
+
+    stroke-width: 3;
+
+    stroke-linecap: round;
+
+    filter:
+        drop-shadow(0 0 5px #7c5cff)
+        drop-shadow(0 0 12px rgba(124, 92, 255, 0.5));
+}
+
+
+/* Core glow */
+
+.orb-core {
+    fill: #7c5cff;
+
+    opacity: 0.08;
+
+    filter: blur(25px);
+}
+
+
+/* =========================
+   KEEP LOGIN CONTENT ABOVE
+========================= */
+
+.signup-link,
+main {
+    position: relative;
+
+    z-index: 10;
+}

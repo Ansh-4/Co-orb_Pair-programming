@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Co-orb - Smart Pair Programming - Login</title>
+
+    <link rel="stylesheet" href="login.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/animejs/lib/anime.iife.min.js"></script>
+</head>
+
+<body>
+    <div class="co-orb">
+
+    <svg class="orb-svg" viewBox="0 0 700 700">
+
+        <!-- Outer rings -->
+        <circle class="ring ring-outer" cx="350" cy="350" r="285"/>
+        <circle class="ring ring-middle" cx="350" cy="350" r="265"/>
+        <circle class="ring ring-inner" cx="350" cy="350" r="235"/>
+
+        <!-- HUD arcs -->
+        <circle class="arc arc-1" cx="350" cy="350" r="300"/>
+        <circle class="arc arc-2" cx="350" cy="350" r="300"/>
+        <circle class="arc arc-3" cx="350" cy="350" r="300"/>
+
+        <!-- Tick marks -->
+        <g class="ticks" id="ticks"></g>
+
+        <!-- Orb -->
+        <g class="orb-lines">
+
+            <!-- Horizontal latitude lines -->
+            <ellipse cx="350" cy="350" rx="145" ry="35"/>
+            <ellipse cx="350" cy="350" rx="145" ry="70"/>
+            <ellipse cx="350" cy="350" rx="145" ry="105"/>
+            <ellipse cx="350" cy="350" rx="145" ry="135"/>
+
+            <!-- Vertical longitude lines -->
+            <ellipse cx="350" cy="350" rx="35" ry="145"/>
+            <ellipse cx="350" cy="350" rx="70" ry="145"/>
+            <ellipse cx="350" cy="350" rx="105" ry="145"/>
+            <ellipse cx="350" cy="350" rx="135" ry="145"/>
+
+        </g>
+
+        <!-- Core -->
+        <circle class="orb-core" cx="350" cy="350" r="135"/>
+
+    </svg>
+
+</div>
+
+    <div class="signup-link">
+        <span>Don't have an account?</span>
+        <a href="signup.html">Sign up</a>
+    </div>
+
+    <main>
+
+        <!-- Website information -->
+        <section class="info">
+
+            <div class="logo">
+                Co<span>-Orb</span>
+            </div>
+
+            <h1>
+                Code smarter.
+                <br>
+                <span>Build together.</span>
+            </h1>
+
+            <p>
+                Pair Programmer is a modern collaborative IDE designed
+                to help developers write, understand and improve code
+                with the help of an AI coding agent.
+            </p>
+
+            <div class="features">
+
+                <div class="feature">
+                    <div class="icon">⌘</div>
+                    <div>
+                        <h3>Smart Coding</h3>
+                        <p>Write and understand code faster.</p>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <div class="icon">✦</div>
+                    <div>
+                        <h3>AI Assistant</h3>
+                        <p>Get help directly inside your workspace.</p>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <div class="icon">⌘</div>
+                    <div>
+                        <h3>Developer Workspace</h3>
+                        <p>Manage files and code in one place.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Login -->
+        <section class="login-card">
+
+            <h2>Welcome back</h2>
+
+            <p class="login-subtitle">
+                Sign in to your workspace
+            </p>
+
+            <form>
+
+                <div class="input-group">
+
+                    <label>Email</label>
+
+                    <input
+                        type="email"
+                        placeholder="you@example.com"
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>Password</label>
+
+                    <input
+                        type="password"
+                        placeholder="Enter your password"
+                    >
+
+                </div>
+
+
+                <button type="submit">
+                    Log in
+                </button>
+
+            </form>
+
+
+            <div class="divider">
+                <span>or</span>
+            </div>
+
+
+         
+
+
+            <p class="bottom-text">
+                Don't have an account?
+                <a href="signup.html">Create one</a>
+            </p>
+
+        </section>
+
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/animejs/lib/anime.iife.min.js"></script>
+    <script src="login.js"></script>
+
+
+    
+
+
+</body>
+</html>
