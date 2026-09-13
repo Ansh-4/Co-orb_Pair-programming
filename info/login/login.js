@@ -149,3 +149,12 @@ animate(".orb-core", {
 
     loop: true
 });
+<script>
+function goBack() {
+    window.history.back();
+}
+
+function goForward() {
+    window.history.forward();
+}
+</script>
