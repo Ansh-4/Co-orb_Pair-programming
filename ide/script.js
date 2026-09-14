@@ -18,6 +18,11 @@ const codeArea = document.getElementById("codeArea");
 const fileList = document.getElementById("fileList");
 const newFileBtn = document.getElementById("newFileBtn");
 
+// AI Chat elements
+const chat = document.querySelector(".chat");
+const agentInput = document.querySelector(".agent-input input");
+const askButton = document.querySelector(".agent-input button");
+
 let currentFile = "index.html";
 
 // Load the first file
@@ -37,14 +42,14 @@ function openFile(fileName) {
     codeArea.value = files[currentFile];
 }
 
-// Add click events to existing files
+// Add click events to files
 function addFileClickEvent(fileElement) {
     fileElement.addEventListener("click", function () {
         openFile(fileElement.id);
     });
 }
 
-// Add events to the original files
+// Add events to original files
 document.querySelectorAll(".file").forEach(function (file) {
     addFileClickEvent(file);
 });
@@ -63,22 +68,119 @@ newFileBtn.addEventListener("click", function () {
         return;
     }
 
-    // Create the file in our files object
+    // Create file
     files[fileName] = "";
 
-    // Create the file element
+    // Create file element
     const newFile = document.createElement("div");
 
     newFile.className = "file";
     newFile.id = fileName;
     newFile.textContent = "📄 " + fileName;
 
-    // Add it to the Explorer
+    // Add to Explorer
     fileList.appendChild(newFile);
 
-    // Make the new file clickable
+    // Make clickable
     addFileClickEvent(newFile);
 
-    // Open the new file
+    // Open file
     openFile(fileName);
+});
+
+
+// =========================
+// AI CHAT
+// =========================
+
+// Add a message to the chat
+function addMessage(message, type) {
+
+    const messageDiv = document.createElement("div");
+
+    messageDiv.className = "message " + type + "-message";
+
+    messageDiv.textContent = message;
+
+    chat.appendChild(messageDiv);
+
+    // Automatically scroll down
+    chat.scrollTop = chat.scrollHeight;
+}
+
+
+// Ask AI
+async function askAI() {
+
+    const question = agentInput.value.trim();
+
+    if (!question) {
+        return;
+    }
+
+    // Show user's message
+    addMessage(question, "user");
+
+    // Clear input
+    agentInput.value = "";
+
+    // Show loading message
+    addMessage("Thinking...", "agent");
+
+    try {
+
+        const response = await fetch("http://127.0.0.1:5000/chat", {
+
+            method: "POST",
+
+            headers: {
+                "Content-Type": "application/json"
+            },
+
+            body: JSON.stringify({
+
+                question: question,
+
+                code: codeArea.value,
+
+                fileName: currentFile
+
+            })
+
+        });
+
+        const data = await response.json();
+
+        // Remove "Thinking..."
+        chat.removeChild(chat.lastElementChild);
+
+        // Show AI response
+        addMessage(data.response, "agent");
+
+    } catch (error) {
+
+        console.error(error);
+
+        // Remove "Thinking..."
+        chat.removeChild(chat.lastElementChild);
+
+        addMessage(
+            "Could not connect to the AI server.",
+            "agent"
+        );
+    }
+}
+
+
+// Ask button
+askButton.addEventListener("click", askAI);
+
+
+// Press Enter to ask
+agentInput.addEventListener("keydown", function (event) {
+
+    if (event.key === "Enter") {
+        askAI();
+    }
+
 });
